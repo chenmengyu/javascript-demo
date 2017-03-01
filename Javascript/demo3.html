@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实例3</title>
+	</head>
+	<body>
+		<p>题目：一个整数，它加上 100 后是一个完全平方数，再加上 168 又是一个完全平方数，请问该数是多少？</p>
+		<button type="button" id='btn'>显示答案</button>
+		<p id="answer" style="display: none;">答案：<input type="text" readonly/></p>
+		<script>
+			btn.onclick = function(){
+				var max;
+				for(var i=parseInt(Math.sqrt(168));i<1000;i++){
+					if((i+1)*(i+1)-i*i > (168+100)){
+						max = i;
+						break;
+					}
+				}
+//				for(var num=parseInt(Math.sqrt(100));num<max;num++){
+				for(var num=10;num<34;num++){
+					if(Math.sqrt(num+100)%1==0 && Math.sqrt(num+100+168)%1==0){
+//						console.log(num);
+						answer.firstElementChild.value = num;
+						answer.style.display = "block";
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
