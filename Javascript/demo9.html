@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实例9</title>
+	</head>
+	<body>
+		<p>题目：要求输出国际象棋棋盘。</p>
+		<div id="answer"></div>
+		
+		<script>
+			var arr=[];
+			for(var row=1; row<9;row++){
+				var curRow = [];
+				for(var col=1;col<9;col++){
+					if((row+col)%2!=0){
+						curRow.push("<td style='background-color:black'>");
+					}else{
+						curRow.push("<td style='background-color:white'>");
+					}
+				}
+				arr.push(curRow.join(""));
+			}
+			answer.innerHTML = "<table cellspacing='0' border='1' width='400' height='400'><tr>"+arr.join("</tr><tr>")+"</tr></table>"
+		</script>
+	</body>
+</html>

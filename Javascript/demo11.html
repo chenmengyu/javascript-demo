@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实例11</title>
+	</head>
+	<body>
+		<p>题目：古典问题：有一对兔子，从出生后第 3 个月起每个月都生一对兔子，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少？</p>
+		输入月份：<input type="text" id= onblur="getTotal()"/>
+		
+		<script type="text/javascript">
+		var total;
+			function getTotal(demo){
+				var month = parseInt(demo.value);
+				console.log(month)
+				if(isNaN(month)){
+//					alert("请输入正确的月份！");
+					return;
+				}
+				if(month==1 || month==2){
+					total = 1;
+				}else{
+					total = getTotal(month-1)+getTotal(month-2);
+				}
+				console.log(total)
+				return total;
+			}
+		</script>
+	</body>
+</html>

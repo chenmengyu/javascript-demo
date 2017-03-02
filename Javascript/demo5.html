@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实例5</title>
+	</head>
+	<body>
+		<p>题目：输入三个整数 x,y,z ，请把这三个数由小到大输出。</p>
+		x：<input type="text" id="num1"/>
+		<br />
+		y：<input type="text" id="num2"/>
+		<br />
+		z：<input type="text" id="num3"/>
+		<br />
+		<button type="button" id="btn">输出</button>
+		<p id="answer"></p>
+		
+		<script>
+			btn.onclick = function(){
+				var arr = [];
+				var reg = /^\d+$/;
+				if((num1.value=="") || (num2.value=="") || (num3.value=="")){
+					alert("不能为空");
+					return;
+				}
+				if(!reg.test(num1.value)){
+					console.log(num1.value+"不是数字");
+					return;
+				}else{
+					arr.push(parseInt(num1.value));
+				}
+				if(!reg.test(num2.value)){
+					console.log(num2.value+"不是数字");
+					return;
+				}else{
+					arr.push(parseInt(num2.value));
+				}
+				if(!reg.test(num3.value)){
+					console.log(num3.value+"不是数字");
+					return;
+				}else{
+					arr.push(parseInt(num3.value));
+				}
+				answer.innerHTML = num1.value+"，"+num2.value+"，"+num3.value+"这三个数从小到大的排序是："
+					+arr.sort(function(a,b){return a-b;}).join("<");
+			}
+		</script>
+	</body>
+</html>

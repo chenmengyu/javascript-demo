@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function versionCompare(ver1,ver2){
+				var arr1 = ver1.replace(/[^\d]$/,"").split(".");
+				var arr2 = ver2.replace(/[^\d]$/,"").split(".");
+				for(var i=0;i<arr1.length;i++){
+					if(isNaN(parseInt(arr2[i]))){
+						return "版本号为"+ver1+"的版本大";
+					}
+					if(arr1[i] != arr2[i]){
+						return parseInt(arr1[i])>parseInt(arr2[i]) ? "版本号为"+ver1+"的版本大"
+							: "版本号为"+ver2+"的版本大";
+					}
+				}
+				return ver1+"和"+ver2+"的版本号一样大";
+			}
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实例4</title>
+	</head>
+	<body>
+		<p>题目：输入某年某月某日，判断这一天是这一年的第几天？</p>
+		输入年月日：<input type="text" id="date" placeholder="形如：1994,4,6"/>
+		<button type="button" id="btn">答案</button>
+		<p id="answer"></p>
+		
+		<script>
+			btn.onclick = function(){
+				if(date.value == ""){
+					alert("日期不能为空")
+					return;
+				}
+				var reg = /^\d{4},\d{1,2},\d{1,2}$/
+				if(!reg.test(date.value)){
+					alert("输入的日期格式不对");
+					return;
+				}
+				var arr = date.value.split(",");
+				var total = 0;
+				var month_day = [31,28,31,30,31,30,31,31,30,31,30,31];
+				//先判断这一年是不是闰年
+				if(arr[0]%400==0 || (arr[0]%4==0&&arr[0]%100!==0)){
+					month_day[1] += 1;
+				}
+				for(var i=0;i<arr[1]-1;i++){
+					total += month_day[i];
+				}
+				answer.innerHTML = date.value+"是"+arr[0]+"年中的第"+(total+parseInt(arr[2]))+"天";
+			}
+		</script>
+	</body>
+</html>

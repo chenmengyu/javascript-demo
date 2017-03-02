@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实例8</title>
+	</head>
+	<body>
+		<p>题目：输出 9*9 口诀。</p>
+		<textarea id="answer" cols="80" rows="15"></textarea>
+		
+		<script>
+			var str = "";
+			for(var row=1;row<=9;row++){
+				for(var col=1;col<=row;col++){
+					str += row+"*"+col+"="+row*col+"\t";
+				}
+				str += "\n";
+			}
+			answer.innerHTML = str;
+		</script>
+	</body>
+</html>
